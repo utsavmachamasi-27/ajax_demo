@@ -5,12 +5,15 @@ const responseBox = document.getElementById("response");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
+  const style     = e.submitter.value;           // "nice"  |  "hate"
+  const endpoint  = style === "hate" ? "/api/hate" : "/api/greet";
+
   // Build the request body
   const data = { name: nameInput.value };
 
   try {
     // POST to FastAPI
-    const res = await fetch("http://127.0.0.1:8000/api/greet", {
+    const res = await fetch(`http://127.0.0.1:8000${endpoint}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
