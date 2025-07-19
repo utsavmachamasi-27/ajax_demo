@@ -22,3 +22,7 @@ async def ping():
 @app.post("/api/greet")
 async def greet(payload: NameIn):
     return {"message": f"Hello, {payload.name}!"}
+
+@app.post("/api/hate")
+async def greet(payload: NameIn):
+    return {"message": f"Hate, {payload.name}!"}
