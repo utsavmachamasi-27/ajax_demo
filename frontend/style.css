@@ -1,0 +1,11 @@
+body {
+  font-family: sans-serif;
+  max-width: 500px;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+input, button {
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
