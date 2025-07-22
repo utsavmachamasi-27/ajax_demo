@@ -10,10 +10,12 @@ form.addEventListener("submit", async (e) => {
 
   // Build the request body
   const data = { name: nameInput.value };
+  const API_URL = "https://ajax-demo-green.vercel.app";
+  // const API_URL = "http://localhost:8000"; // Local FastAPI server
 
   try {
     // POST to FastAPI
-    const res = await fetch(`https://ajax-demo-xfwj.vercel.app${endpoint}`, {
+    const res = await fetch(`${API_URL}${endpoint}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
